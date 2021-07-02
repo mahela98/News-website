@@ -1,10 +1,10 @@
-import Books from "./Books";
+import BooksPage from "./BooksPage";
 
 function App() {
   return (
     <div className="App">
       {/* <h1>Books</h1> */}
-      <Books/>
+      <BooksPage/>
     </div>
   );
 }
