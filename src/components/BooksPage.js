@@ -2,7 +2,7 @@ import useFetchFunction from "../fetch/useFetchFunction";
 import { Link } from "react-router-dom";
 const BooksPage = () => {
   const { data, isPending, error } = useFetchFunction(
-    `https://api.nytimes.com/svc/books/v3/lists/current/hardcover-fiction.json?api-key=${process.env.REACT_APP_BOOKS_API_KEY}`
+    `https://api.nytimes.com/svc/books/v3/lists/current/hardcover-fiction.json?api-key=${process.env.REACT_APP_NYT_BOOKS_API_KEY}`
   );
 
   return (
