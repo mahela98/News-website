@@ -1,15 +1,19 @@
 import { Fragment } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
-import { BellIcon, MenuIcon, XIcon } from '@heroicons/react/outline'
+import { MenuIcon, XIcon } from '@heroicons/react/outline'
 import "./Navbar.css";
 
 
 const navigation = [
-    { name: 'Dashboard', href: '/', current: true },
-    { name: 'Team', href: '#', current: false },
-    { name: 'Projects', href: '#', current: false },
-    { name: 'Calendar', href: '#', current: false },
+    { name: 'Home', href: '/', current: false },
+    { name: 'Books', href: '/books', current: false },
+    { name: 'Movies', href: '#', current: false },
+    { name: 'About', href: '/test', current: false },
 ]
+
+function changeMcolor(item) {
+    console.log(item.name)
+}
 
 function classNames(...classes) {
     return classes.filter(Boolean).join(' ')
@@ -35,10 +39,10 @@ export default function Example() {
                             </div>
                             <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
                                 <div className="flex-shrink-0 flex items-center">
-                                
+
                                     <p className="block lg:hidden h-8 w-auto logo"> News Web </p>
                                     <p className="hidden lg:block h-8 w-auto logo"> News Web </p>
-                                
+
                                 </div>
                                 <div className="hidden sm:block sm:ml-6">
                                     <div className="flex space-x-4">
@@ -53,16 +57,14 @@ export default function Example() {
                                                 aria-current={item.current ? 'page' : undefined}
                                             >
                                                 {item.name}
+                                              
                                             </a>
                                         ))}
                                     </div>
                                 </div>
                             </div>
                             <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-                                <button className="bg-gray-800 p-1 rounded-full text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
-                                    <span className="sr-only">View notifications</span>
-                                    <BellIcon className="h-6 w-6" aria-hidden="true" />
-                                </button>
+
 
                                 {/* Profile dropdown */}
                                 <Menu as="div" className="ml-3 relative">
@@ -95,26 +97,13 @@ export default function Example() {
                                                     <Menu.Item>
                                                         {({ active }) => (
                                                             <a
-                                                                href="#"
+                                                                href="/profile"
                                                                 className={classNames(
                                                                     active ? 'bg-gray-100' : '',
                                                                     'block px-4 py-2 text-sm text-gray-700'
                                                                 )}
                                                             >
-                                                                Your Profile
-                                                            </a>
-                                                        )}
-                                                    </Menu.Item>
-                                                    <Menu.Item>
-                                                        {({ active }) => (
-                                                            <a
-                                                                href="#"
-                                                                className={classNames(
-                                                                    active ? 'bg-gray-100' : '',
-                                                                    'block px-4 py-2 text-sm text-gray-700'
-                                                                )}
-                                                            >
-                                                                Settings
+                                                                Profile
                                                             </a>
                                                         )}
                                                     </Menu.Item>
