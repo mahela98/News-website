@@ -7,8 +7,8 @@ const BooksPage = () => {
   );
 
   return (
-    <div className="myImage">
-      <div className="pb-5 sm:pb-0 bookstitle grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2">
+    <div className="bookspageBody">
+      <div className="shadow-2xl  pb-5 sm:pb-0 bookstitle grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2">
         <h1 className=" font-bold text-center ml-5 text-2xl pt-5 sm:pb-5 sm:text-left">BOOKS</h1>
         <div>
           <div className="shadow flex pt-5 mr-5 ml-5">
@@ -29,8 +29,8 @@ const BooksPage = () => {
 
 
           <section
-            className="grid grid-cols-1 gap-10 px-5 pb-20
-      sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4
+            className="grid grid-cols-2 gap-3 px-3 sm:gap-5 sm:px-5 pb-20 pt-5
+      sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 xl:gap-8
       "
           >
             {data.results.books.map((book) => {
@@ -49,22 +49,22 @@ const BooksPage = () => {
               return (
                 <div
                   key={rank}
-                  className="bg-gray-100 px-10 py-5 rounded-lg sm:px-5"
+                  className="bg-gray-100 px-0 py-0 pb-2 sm:pb-5 rounded-lg my-bookView"
                 >
                   <div>
                     <img
                       src={book_image}
                       alt={title}
-                      className="block mx-auto w-3/4"
+                      className="block mx-auto w-full"
                     />
                   </div>
-                  <div>
-                    <h3 className="font-bold my-2 text-1xl">{title}</h3>
+                  <div className="text-center">
+                    <h3 className=" font-bold my-2 text-1xl sm:text-1xl">{title}</h3>
                     {/* <p className="mb-4">{description}</p> */}
-                    <Link to={{
+                    {/* <Link to={{
                       pathname: '/BookDetailsPage',
                       state: { book }
-                    }}> link</Link>
+                    }}> link</Link> */}
                     <p>
                       <span className="font-bold">Author: </span>
                       {author}
@@ -72,15 +72,15 @@ const BooksPage = () => {
                   </div>
                   <div>
                     <ul>
-                      <li>
+                      {/* <li>
                         <span className="font-bold">Publisher: </span>
                         {publisher}
-                      </li>
+                      </li> */}
 
-                      <li>
+                      {/* <li>
                         <span className="font-bold">ISBN: </span>
                         {primary_isbn10}
-                      </li>
+                      </li> */}
                     </ul>
                   </div>
                 </div>

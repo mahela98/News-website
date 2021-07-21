@@ -4,8 +4,8 @@ const ProfilePage = () => {
     return (
         <>
 <div className="flex items-center justify-center w-full pt-20 pb-20 myImage">
-                {/* Card code block start */}
-                <div className="bg-white dark:bg-gray-800 shadow rounded pt-10">
+                
+                <div className="bg-white dark:bg-gray-800 shadow rounded pt-10 ">
                     <div className="relative ">
                         <div className=" inset-0 m-auto w-32 h-32 absolute bottom-0 -mb-12 xl:ml-10 rounded border-2 shadow border-white">
                             <img className="w-full h-full overflow-hidden object-cover rounded" src="https://letsenhance.io/static/334225cab5be263aad8e3894809594ce/75c5a/MainAfter.jpg"  />
@@ -68,7 +68,7 @@ const ProfilePage = () => {
                         </div>
                     </div>
                 </div>
-                {/* Card code block end */}
+              
             </div>
 
 
