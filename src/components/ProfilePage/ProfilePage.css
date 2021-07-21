@@ -1,7 +1,9 @@
-.myImage{
-    
-    background-image: url('https://images.unsplash.com/photo-1578836537282-3171d77f8632?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80');
-    background-repeat: no-repat;
-    background-size: cover;
-    background-blend-mode: multiply;
+.myImage {
+  background: rgba(2, 0, 36, 0.671);
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 0.733) 0%,
+    rgba(9, 9, 121, 0.726) 35%,
+    rgba(0, 213, 255, 0.767) 100%
+  );
 }
