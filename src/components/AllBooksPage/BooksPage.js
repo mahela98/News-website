@@ -58,7 +58,7 @@ const BooksPage = () => {
                       className="block mx-auto w-full"
                     />
                   </div>
-                  <div className="text-center">
+                  <div className="px-2 sm:px-4 text-left">
                     <h3 className=" font-bold my-2 text-1xl sm:text-1xl">{title}</h3>
                     {/* <p className="mb-4">{description}</p> */}
                     {/* <Link to={{
@@ -66,7 +66,7 @@ const BooksPage = () => {
                       state: { book }
                     }}> link</Link> */}
                     <p>
-                      <span className="font-bold">Author: </span>
+                      <span className="font-bold">By  </span>
                       {author}
                     </p>
                   </div>

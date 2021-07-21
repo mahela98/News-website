@@ -1,54 +1,51 @@
-.bookspageBody{
-  /* background: rgb(56, 56, 56); */
-
-  background: linear-gradient(
-        90deg,
-        rgb(125, 225, 255) 0%,
-        /* rgba(0, 63, 0, 0.918) 35%, */
-        rgb(5, 0, 46) 100%
-      );
-
-    
-    }
-.bookstitle{
-    background: rgba(2, 0, 36, 0.671);
-    color: white;
+.bookspageBody {
+  background: rgb(26, 26, 29);
+}
+.bookstitle {
+  background: rgba(2, 0, 36, 0.671);
+  color: white;
   background: linear-gradient(
     60deg,
     rgb(29, 183, 255) 0%,
     rgb(0, 8, 51) 45%,
     rgba(0, 174, 255, 0.842) 100%
   );
-    margin-bottom: 10px;
-    border-bottom: 3px solid rgb(255, 255, 255) ;
-    
-    /* border-bottom-left-radius: 20px; */
-}
-.my-btn{
-    background-color: rgb(0, 6, 61);
-    color: white;
-    padding-left: 20px;
-    padding-right: 20px;
-}
-.my-btn:hover{
-    background-color: rgb(0, 247, 255);
-    color: rgb(11, 0, 37);
+  margin-bottom: 10px;
+  border-bottom: 3px solid rgb(255, 255, 255);
 
+  /* border-bottom-left-radius: 20px; */
 }
-.my-input{
-    color: rgb(6, 0, 32);
+.my-btn {
+  background-color: rgb(0, 6, 61);
+  color: white;
+  padding-left: 20px;
+  padding-right: 20px;
 }
-.my-input:focus{
-    padding: 0;
-    border: none;
-    background: white;    
-    outline: none;
-    padding-left:5px;
-
+.my-btn:hover {
+  background-color: rgb(0, 247, 255);
+  color: rgb(11, 0, 37);
+}
+.my-input {
+  color: rgb(6, 0, 32);
+}
+.my-input:focus {
+  padding: 0;
+  border: none;
+  background: white;
+  outline: none;
+  padding-left: 5px;
 }
 
+.my-bookView {
+  border: 3px solid white;
+  background-color: rgba(12, 0, 36, 0.308);
+  color: white;
+}
 
-.my-bookView:hover{
-background: rgb(8, 0, 27);
-color: white;
+.my-bookView:hover {
+  background: rgb(8, 0, 27);
+  color: white;
+  border-color: rgb(0, 247, 255);
+  /* border-bottom: 3px solid rgb(245, 245, 245); */
+  /* border-right: 2px solid rgb(255, 255, 255); */
 }
