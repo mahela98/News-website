@@ -41,49 +41,37 @@ const BooksPage = () => {
                 // description,
                 // price,
                 primary_isbn10,
-                publisher,
+                // publisher,
+                // primary_isbn13,
                 rank,
                 title,
               } = book;
 
               return (
-                <div
-                  key={rank}
-                  className="bg-gray-100 px-0 py-0 pb-2 sm:pb-5 rounded-lg my-bookView"
-                >
-                  <div>
-                    <img
-                      src={book_image}
-                      alt={title}
-                      className="block mx-auto w-full"
-                    />
-                  </div>
-                  <div className="px-2 sm:px-4 text-left">
-                    <h3 className=" font-bold my-2 text-1xl sm:text-1xl">{title}</h3>
-                    {/* <p className="mb-4">{description}</p> */}
-                    {/* <Link to={{
-                      pathname: '/BookDetailsPage',
-                      state: { book }
-                    }}> link</Link> */}
-                    <p>
-                      <span className="font-bold">By  </span>
-                      {author}
-                    </p>
-                  </div>
-                  <div>
-                    <ul>
-                      {/* <li>
-                        <span className="font-bold">Publisher: </span>
-                        {publisher}
-                      </li> */}
-
-                      {/* <li>
-                        <span className="font-bold">ISBN: </span>
-                        {primary_isbn10}
-                      </li> */}
-                    </ul>
-                  </div>
-                </div>
+                <>
+                  <Link to={{
+                    pathname: '/BookDetailsPage',
+                    state: { book }
+                  }}>
+                    <div key={primary_isbn10}
+                      className="bg-gray-100 px-0 py-0 pb-2 sm:pb-5 rounded-lg my-bookView"  >
+                      <div>
+                        <img
+                          src={book_image}
+                          alt={title}
+                          className="block mx-auto w-full"
+                        />
+                      </div>
+                      <div className="px-2 sm:px-4 text-left">
+                        <h3 className=" font-bold my-2 text-1xl sm:text-1xl">{title} </h3>
+                        <p>
+                          <span className="font-bold">By  </span>
+                          {author}
+                        </p>
+                      </div>
+                    </div>
+                  </Link>
+                </>
               );
             })}
           </section>

@@ -11,9 +11,6 @@ const navigation = [
     { name: 'About', href: '/test', current: false },
 ]
 
-function changeMcolor(item) {
-    console.log(item.name)
-}
 
 function classNames(...classes) {
     return classes.filter(Boolean).join(' ')

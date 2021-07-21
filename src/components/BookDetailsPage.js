@@ -19,7 +19,6 @@ const BookDetailsPage = () => {
     } = book;
     return (
       <div>
-        <h1>he</h1>
         <h2>{author}</h2>
       </div>
     );
