@@ -1,4 +1,4 @@
-import BooksPage from "./components/BooksPage";
+import BooksPage from "./components/AllBooksPage/BooksPage";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import BookDetailsPage from "./components/BookDetailsPage";
 import Test from "./components/test1";

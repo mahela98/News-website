@@ -1,4 +1,5 @@
-import useFetchFunction from "../fetch/useFetchFunction";
+import useFetchFunction from "../../fetch/useFetchFunction";
+import "./Bookspage.css";
 import { Link } from "react-router-dom";
 const BooksPage = () => {
   const { data, isPending, error } = useFetchFunction(
@@ -6,13 +7,27 @@ const BooksPage = () => {
   );
 
   return (
-    <div>
+    <div className="myImage">
+      <div className="pb-5 sm:pb-0 bookstitle grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2">
+        <h1 className=" font-bold text-center ml-5 text-2xl pt-5 sm:pb-5 sm:text-left">BOOKS</h1>
+        <div>
+          <div className="shadow flex pt-5 mr-5 ml-5">
+            <input className="w-full rounded p-2" type="text" placeholder="Search..." />
+            <button className="bg-white w-auto flex justify-end items-center text-blue-500 p-2 hover:text-blue-400">
+              <i className="material-icons">search</i>
+            </button>
+          </div>
+        </div>
+
+      </div>
+
       {isPending && <div>is pending</div>}
       {error && <div>{error}</div>}
 
       {data && (
         <div>
-          <h1 className="font-bold text-center text-4xl py-5">Books</h1>
+
+
           <section
             className="grid grid-cols-1 gap-10 px-5 pb-20
       sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4
@@ -48,7 +63,7 @@ const BooksPage = () => {
                     {/* <p className="mb-4">{description}</p> */}
                     <Link to={{
                       pathname: '/BookDetailsPage',
-                      state:{ book}
+                      state: { book }
                     }}> link</Link>
                     <p>
                       <span className="font-bold">Author: </span>

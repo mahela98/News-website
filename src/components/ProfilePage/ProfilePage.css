@@ -1,9 +1,9 @@
 .myImage {
   background: rgba(2, 0, 36, 0.671);
   background: linear-gradient(
-    90deg,
-    rgba(2, 0, 36, 0.733) 0%,
-    rgba(9, 9, 121, 0.726) 35%,
-    rgba(0, 213, 255, 0.767) 100%
+    60deg,
+    rgba(255, 81, 12, 0.918) 0%,
+    rgb(255, 218, 8,0.918) 35%,
+    rgb(0, 26, 255,0.918) 100%
   );
 }

@@ -1,0 +1,11 @@
+.bookstitle{
+    background: rgba(2, 0, 36, 0.671);
+    color: white;
+  background: linear-gradient(
+    60deg,
+    rgba(0, 5, 51, 0.918) 0%,
+    rgba(0, 17, 110, 0.918) 35%,
+    rgba(0, 174, 255, 0.842) 100%
+  );
+    margin-bottom: 10px;
+}
