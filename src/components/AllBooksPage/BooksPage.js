@@ -12,8 +12,8 @@ const BooksPage = () => {
         <h1 className=" font-bold text-center ml-5 text-2xl pt-5 sm:pb-5 sm:text-left">BOOKS</h1>
         <div>
           <div className="shadow flex pt-5 mr-5 ml-5">
-            <input className="w-full rounded p-2" type="text" placeholder="Search..." />
-            <button className="bg-white w-auto flex justify-end items-center text-blue-500 p-2 hover:text-blue-400">
+            <input className="my-input w-full rounded p-2" type="text" placeholder="Search..." />
+            <button className=" my-btn rounded bg-white w-auto flex justify-end items-center text-blue-500 p-2 hover:text-blue-400">
               <i className="material-icons">search</i>
             </button>
           </div>
