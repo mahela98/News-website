@@ -4,6 +4,7 @@ import BookDetailsPage from "./components/BookDetailsPage";
 import Test from "./components/test1";
 import Navbar from "./components/Navbar/Navbar";
 import ProfilePage from "./components/ProfilePage/ProfillePage";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   return (
@@ -24,6 +25,9 @@ function App() {
             <ProfilePage />
           </Route>
         </Switch>
+
+<Footer/>
+
       </div>
     </Router>
   );
