@@ -1,0 +1,16 @@
+.book-details-body{
+    background: rgb(26, 26, 29);
+    color: white;
+}
+.my-title-text{
+    color: rgb(0, 217, 255);   
+}
+.my-link:hover{
+color: rgb(0, 128, 167);
+font-size: 20px;
+}
+.my-boder{
+    border: 2px solid white;
+    padding: 10px;
+    
+}
