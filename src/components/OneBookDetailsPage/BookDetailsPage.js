@@ -25,7 +25,7 @@ const BookDetailsPage = () => {
           <div className="container px-5 py-10 lg:py-14 mx-auto ">
             <div className=" sm:w-4/5 mx-auto flex flex-wrap content-center my-boder">
               <img alt="ecommerce" className="w-4/5 pl-20 sm:pl-0 sm:w-1/2 xl:w-1/3  lg:h-auto h-full object-cover  object-center rounded" src={book_image} />
-              <div className="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
+              <div className="lg:w-1/2 w-full lg:pl-10  lg:py-6 mt-6 lg:mt-0">
                 <h1 className="my-title-text text-3xl title-font font-medium mb-1">{title}</h1>
                 <h2 className="text-sm title-font text-white-500 tracking-widest text-lg">Author- {author}</h2>
 
@@ -53,7 +53,7 @@ const BookDetailsPage = () => {
                   </span>
                 </div>
 
-                
+
                 <p className="leading-relaxed">{description}</p>
                 <h2 className="text-sm title-font text-gray-300 tracking-widest pt-5 ">Published By {publisher} Books.</h2>
 
