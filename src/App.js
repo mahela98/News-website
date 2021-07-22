@@ -10,7 +10,7 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <Navbar/>
+        <Navbar />
         <Switch>
           <Route exact path="/books">
             <BooksPage />
@@ -26,7 +26,7 @@ function App() {
           </Route>
         </Switch>
 
-<Footer/>
+        <Footer />
 
       </div>
     </Router>
