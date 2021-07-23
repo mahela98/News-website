@@ -5,6 +5,7 @@ import Test from "./components/test1";
 import Navbar from "./components/Navbar/Navbar";
 import ProfilePage from "./components/ProfilePage/ProfillePage";
 import Footer from "./components/Footer/Footer";
+import GoogleBookSearch from "./components/GoogleBookSearch/GoogleBookSearch";
 
 function App() {
   return (
@@ -13,7 +14,7 @@ function App() {
         <Navbar />
         <Switch>
           <Route exact path="/books">
-            <BooksPage />
+            <BooksPage/>
           </Route>
           <Route path="/bookdetailspage">
             <BookDetailsPage />
@@ -23,6 +24,9 @@ function App() {
           </Route>
           <Route path="/profile">
             <ProfilePage />
+          </Route>
+          <Route path="/booksearch">
+            <GoogleBookSearch />
           </Route>
         </Switch>
 

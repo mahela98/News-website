@@ -1,25 +1,19 @@
 import useFetchFunction from "../../fetch/useFetchFunction";
 import "./Bookspage.css";
 import { Link } from "react-router-dom";
+import BookSearchBar from "./BookSearchBar";
+
+
 const BooksPage = () => {
-  const { data, isPending, error } = useFetchFunction(
-    `https://api.nytimes.com/svc/books/v3/lists/current/hardcover-fiction.json?api-key=${process.env.REACT_APP_NYT_BOOKS_API_KEY}`
-  );
+
+  var url = `https://api.nytimes.com/svc/books/v3/lists/current/hardcover-fiction.json?api-key=${process.env.REACT_APP_NYT_BOOKS_API_KEY}`;
+  //  var url = `https://www.googleapis.com/books/v1/volumes?q=THE PAPER PALACE&orderBy=relevance&key=AIzaSyAxuX41zCdY1lL6jpZPSZodtP6ItpH46gk&maxResults=15&projection=full&printType=books`;
+
+  const { data, isPending, error } = useFetchFunction(url);
 
   return (
     <div className="bookspageBody">
-      <div className="shadow-2xl  pb-5 sm:pb-0 bookstitle grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2">
-        <h1 className=" font-bold text-center ml-5 text-2xl pt-5 sm:pb-5 sm:text-left">BOOKS</h1>
-        <div>
-          <div className="shadow flex pt-5 mr-5 ml-5">
-            <input className="my-input w-full rounded p-2" type="text" placeholder="Search..." />
-            <button className=" my-btn rounded bg-white w-auto flex justify-end items-center text-blue-500 p-2 hover:text-blue-400">
-              <i className="material-icons">search</i>
-            </button>
-          </div>
-        </div>
-
-      </div>
+      <BookSearchBar />
 
       {isPending && <div>is pending</div>}
       {error && <div>{error}</div>}
@@ -65,13 +59,13 @@ const BooksPage = () => {
                     state: { book }
                   }}
                   >
-                  <div className="px-2 sm:px-4 text-left">
-                    <h3 className=" font-bold my-2 text-1xl sm:text-1xl">{title} </h3>
-                    <p>
-                      <span className="font-bold">By  </span>
-                      {author}
-                    </p>
-                  </div>
+                    <div className="px-2 sm:px-4 text-left">
+                      <h3 className=" font-bold my-2 text-1xl sm:text-1xl">{title} </h3>
+                      <p>
+                        <span className="font-bold">By  </span>
+                        {author}
+                      </p>
+                    </div>
                   </Link>
                 </div>
               );
