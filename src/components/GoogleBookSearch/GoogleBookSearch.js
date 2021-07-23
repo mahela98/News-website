@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import BookSearchBar from "../AllBooksPage/BookSearchBar";
 const GoogleBookSearch = () => {
 
-    var url = `https://www.googleapis.com/books/v1/volumes?q=THE PAPER PALACE&orderBy=relevance&key=AIzaSyAxuX41zCdY1lL6jpZPSZodtP6ItpH46gk&maxResults=15&projection=full&printType=books`;
+    var url = `https://www.googleapis.com/books/v1/volumes?q=kiss&orderBy=relevance&zoom=0&key=AIzaSyAxuX41zCdY1lL6jpZPSZodtP6ItpH46gk&maxResults=15&projection=full&printType=books`;
     const { data, isPending, error } = useFetchFunction(url);
 
 
@@ -20,20 +20,18 @@ const GoogleBookSearch = () => {
     sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 xl:gap-8
     "  >
                     {data.items.map((book) => {
-                         
-                           const src=book.volumeInfo.imageLinks === undefined ? "": `${book.volumeInfo.imageLinks.thumbnail}`;
+                 
+
+                        const src = book.volumeInfo.imageLinks === undefined ? "" : `${book.volumeInfo.imageLinks.thumbnail}`;
                         // console.log(src)
-                       const {
+                        const {
                             id,
                             saleInfo,
                             retailPrice,
                             searchInfo,
                             description,
                             volumeInfo,
-                           
                         } = book;
-                      
-                        // {console.log(imageLinks.smallThumbnail)}
                         return (
                             <div key={id}
                                 className="bg-gray-100 px-0 py-0 pb-2 sm:pb-5 rounded-lg my-bookView"  >
@@ -44,7 +42,8 @@ const GoogleBookSearch = () => {
                                 >
                                     <div >
                                         <img
-                                             src={src}
+                                            // src={src}
+                                            src={`https://books.google.com/books?id=${id}&printsec=frontcover&img=1&zoom=4&source=gbs_api`}
                                             alt={volumeInfo.title}
                                             className="block mx-auto w-full"
                                         />
@@ -59,7 +58,7 @@ const GoogleBookSearch = () => {
                                         <h3 className=" font-bold my-2 text-1xl sm:text-1xl">{volumeInfo.title} </h3>
                                         <p>
                                             <span className="font-bold">By  </span>
-                                            {volumeInfo.authors}
+                                            {volumeInfo.authors || "Anonymous"}
                                         </p>
                                     </div>
                                 </Link>
