@@ -23,6 +23,8 @@ const BookDetailsPage = () => {
       volumeInfo,
       id
     } = book;
+
+    console.log(saleInfo)
     return (
       <>
         <section className="book-details-body body-font overflow-hidden">
@@ -31,7 +33,7 @@ const BookDetailsPage = () => {
               <img alt="ecommerce" className="w-4/5 pl-20 sm:pl-0 sm:w-1/2 xl:w-1/3  lg:h-auto h-full object-cover  object-center rounded" src={book_image || `https://books.google.com/books?id=${id}&printsec=frontcover&img=1&zoom=4&source=gbs_api`} />
               <div className="lg:w-1/2 w-full lg:pl-10  lg:py-6 mt-6 lg:mt-0">
                 <h1 className="my-title-text text-3xl title-font font-medium mb-1">{title || volumeInfo.title}</h1>
-                <h2 className="text-sm title-font text-white-500 tracking-widest text-lg">Author- {author || volumeInfo.authors || "Anonymous" }</h2>
+                <h2 className="text-sm title-font text-white-500 tracking-widest text-lg">Author- {author || volumeInfo.authors || "Anonymous"}</h2>
 
                 <div className="flex mb-4">
                   <span className="flex items-center">
@@ -57,29 +59,34 @@ const BookDetailsPage = () => {
                   </span>
                 </div>
 
+                <div className="flex py-3 px-5 sm:px-0">
+                  {
+                    price && (<span className="title-font font-medium text-xl text-gray-200 my-title-text">Price : $ {price}</span>)
+                  }
+                  {!price &&
+                    saleInfo.retailPrice && (<span className="title-font font-medium text-xl text-gray-200 my-title-text">Price : {saleInfo.retailPrice.amount && saleInfo.retailPrice.amount} {saleInfo.retailPrice.currencyCode && saleInfo.retailPrice.currencyCode} </span>
+                    )
+                  }
+                </div>
 
-                <p className="leading-relaxed">{description || volumeInfo.description }</p>
-                <h2 className="text-sm title-font text-gray-300 tracking-widest pt-5 ">Published By {publisher ||  volumeInfo.publisher} Books.</h2>
+                <p className="leading-relaxed">{description || volumeInfo.description}</p>
+                <h2 className="text-sm title-font text-gray-300 tracking-widest pt-5 ">Published By {publisher || volumeInfo.publisher} Books.</h2>
 
-                {/* <div className="flex py-10 px-5 sm:px-0">
-                  <span className="title-font font-medium text-2xl text-gray-900">${price}</span>
-                </div> */}
+
 
                 <div className="mt-5">
                   <h4 className="mb-2 text-lgtitle-font font-medium mb-1">Buy Links</h4>
                   <ul className="pl-5 list-disc ">
-                 
-{/*                   
+
+                    {/*                   
                  { buy_links.map((buy_link) =>
                     <li className="my-link" key={buy_link.url}> <a target="_blank" rel="noopener noreferrer" href={buy_link.url}> {buy_link.name}</a>   </li>
                   )
                 }     */}
-                   {/* <li className="my-link" > <a target="_blank" rel="noopener noreferrer" href={saleInfo.buyLink || volumeInfo. infoLink}> {saleInfo.buyLink || volumeInfo. infoLink}</a>   </li> */}
+                    {/* <li className="my-link" > <a target="_blank" rel="noopener noreferrer" href={saleInfo.buyLink || volumeInfo. infoLink}> {saleInfo.buyLink || volumeInfo. infoLink}</a>   </li> */}
 
                   </ul>
                 </div>
-
-
 
               </div>
             </div>
@@ -97,7 +104,7 @@ const BookDetailsPage = () => {
       </>
     );
   } catch (error) {
-    {console.log(error)}
+    { console.log(error) }
     return (
       <Redirect to='/' />
     );
