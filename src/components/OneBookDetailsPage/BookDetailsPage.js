@@ -1,6 +1,7 @@
 import { useLocation } from "react-router";
 import { Redirect } from 'react-router-dom';
 import "./BookDetailsPage.css";
+import ByLinksComponent from "./ByeLinksComponent";
 
 const BookDetailsPage = () => {
   const location = useLocation();
@@ -76,16 +77,8 @@ const BookDetailsPage = () => {
 
                 <div className="mt-5">
                   <h4 className="mb-2 text-lgtitle-font font-medium mb-1">Buy Links</h4>
-                  <ul className="pl-5 list-disc ">
-
-                    {/*                   
-                 { buy_links.map((buy_link) =>
-                    <li className="my-link" key={buy_link.url}> <a target="_blank" rel="noopener noreferrer" href={buy_link.url}> {buy_link.name}</a>   </li>
-                  )
-                }     */}
-                    {/* <li className="my-link" > <a target="_blank" rel="noopener noreferrer" href={saleInfo.buyLink || volumeInfo. infoLink}> {saleInfo.buyLink || volumeInfo. infoLink}</a>   </li> */}
-
-                  </ul>
+                  <ByLinksComponent buy_links = {buy_links || null} saleInfo = {saleInfo || null} />
+                
                 </div>
 
               </div>

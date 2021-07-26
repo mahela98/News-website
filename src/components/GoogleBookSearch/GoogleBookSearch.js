@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import BookSearchBar from "../AllBooksPage/BookSearchBar";
 const GoogleBookSearch = () => {
 
-    var url = `https://www.googleapis.com/books/v1/volumes?q=kiss&orderBy=relevance&zoom=0&key=AIzaSyAxuX41zCdY1lL6jpZPSZodtP6ItpH46gk&maxResults=15&projection=full&printType=books`;
+    var url = `https://www.googleapis.com/books/v1/volumes?q=ass&orderBy=relevance&zoom=0&key=AIzaSyAxuX41zCdY1lL6jpZPSZodtP6ItpH46gk&maxResults=15&projection=full&printType=books`;
     const { data, isPending, error } = useFetchFunction(url);
 
 
@@ -42,8 +42,8 @@ const GoogleBookSearch = () => {
                                 >
                                     <div >
                                         <img
-                                            // src={src}
-                                            src={`https://books.google.com/books?id=${id}&printsec=frontcover&img=1&zoom=4&source=gbs_api`}
+                                            src={src}
+                                            // src={`https://books.google.com/books?id=${id}&printsec=frontcover&img=1&zoom=4&source=gbs_api`}
                                             alt={volumeInfo.title}
                                             className="block mx-auto w-full"
                                         />
