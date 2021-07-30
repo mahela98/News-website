@@ -1,80 +1,78 @@
-import useFetchFunction from "../../fetch/useFetchFunction";
-import "./Bookspage.css";
+import React from 'react';
+import GoogleBookSearch from "./GoogleBookSearchComponent";
+import NYTBooksComponent from "./NYTBooksComponent";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import BookSearchBar from "./BookSearchBar";
+import useFetchFunction from "../../fetch/useFetchFunction";
 
 
 const BooksPage = () => {
+    const [q, setQ] = useState("");
+    const [url, setUrl] = useState(`https://api.nytimes.com/svc/books/v3/lists/current/hardcover-fiction.json?api-key=${process.env.REACT_APP_NYT_BOOKS_API_KEY}`)
 
-  var url = `https://api.nytimes.com/svc/books/v3/lists/current/hardcover-fiction.json?api-key=${process.env.REACT_APP_NYT_BOOKS_API_KEY}`;
-  //  var url = `https://www.googleapis.com/books/v1/volumes?q=THE PAPER PALACE&orderBy=relevance&key=AIzaSyAxuX41zCdY1lL6jpZPSZodtP6ItpH46gk&maxResults=15&projection=full&printType=books`;
+    const handleSubmit = (evt) => {
+        evt.preventDefault();
+        if (q != "") {
+            setUrl(`https://www.googleapis.com/books/v1/volumes?q=${q}&orderBy=relevance&zoom=0&key=AIzaSyAxuX41zCdY1lL6jpZPSZodtP6ItpH46gk&maxResults=15&projection=full&printType=books`);
+        }
+        else if(q==""){
+            setUrl(`https://api.nytimes.com/svc/books/v3/lists/current/hardcover-fiction.json?api-key=${process.env.REACT_APP_NYT_BOOKS_API_KEY}`);
+        }
 
-  const { data, isPending, error } = useFetchFunction(url);
+    }
+    const { data, isPending, error } = useFetchFunction(url);
+    return (
+        <>
+            <div className="bookspageBody">
+                <div className="shadow-2xl  pb-5 sm:pb-0 bookstitle grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2">
+                    <h1 className=" font-bold text-center ml-5 text-2xl pt-5 sm:pb-5 sm:text-left">BOOKS</h1>
+                    <div>
+                        <div className="shadow grid pt-5 mr-5 ml-5">
+                            <form onSubmit={handleSubmit} className="grid grid-cols-2">
+                                <input
+                                    onChange={e => setQ(e.target.value)}
+                                    // onChange={() => setClicked(false)}
+                                    value={q}
+                                    className="my-input w-full rounded p-2" type="text" placeholder="Search..." />
+                                {/* <Link to="/books" params={{ q: { q } }}> */}
 
-  return (
-    <div className="bookspageBody">
-      <BookSearchBar />
+                                <button
+                                    type="submit"
+                                    className=" my-btn rounded bg-white w-auto flex justify-end items-center text-blue-500 p-2 hover:text-blue-400">
+                                    <i className='material-icons'>search</i>
+                                </button>
 
-      {isPending && <div>is pending</div>}
-      {error && <div>{error}</div>}
-
-      {data && (
-        <div>
-          <section
-            className="grid grid-cols-2 gap-3 px-3 sm:gap-5 sm:px-5 pb-20 pt-5
-      sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 xl:gap-8
-      "  >
-            {data.results.books.map((book) => {
-              const {
-                author,
-                book_image,
-                // buy_links,
-                // description,
-                // price,
-                primary_isbn10,
-                // publisher,
-                // primary_isbn13,
-                // rank,
-                title,
-              } = book;
-
-              return (
-                <div key={primary_isbn10}
-                  className="bg-gray-100 px-0 py-0 pb-2 sm:pb-5 rounded-lg my-bookView"  >
-                  <Link to={{
-                    pathname: '/BookDetailsPage',
-                    state: { book }
-                  }}
-                  >
-                    <div >
-                      <img
-                        src={book_image}
-                        alt={title}
-                        className="block mx-auto w-full"
-                      />
+                            </form>
+                            {/* </Link> */}
+                        </div>
                     </div>
-                  </Link>
-                  <Link to={{
-                    pathname: '/BookDetailsPage',
-                    state: { book }
-                  }}
-                  >
-                    <div className="px-2 sm:px-4 text-left">
-                      <h3 className=" font-bold my-2 text-1xl sm:text-1xl">{title} </h3>
-                      <p>
-                        <span className="font-bold">By  </span>
-                        {author}
-                      </p>
-                    </div>
-                  </Link>
                 </div>
-              );
-            })}
-          </section>
-        </div>
-      )}
-    </div>
-  );
-};
+
+                <div>
+
+
+                {isPending && <div>is pending</div>}
+            {error && <div>{error}</div>}
+
+            {data && <GoogleBookSearch data={data} />}
+
+
+
+                    {/* {clicked==false && (<NYTBooksComponent />)}
+        {clicked==true && !q==="" && (<GoogleBookSearch q={q}/>)}
+        {clicked==true && q==="" && (<NYTBooksComponent />)} */}
+                    {/* {clicked==false && !q=="" && (<NYTBooksComponent />)} */}
+
+                    {/* <GoogleBookSearch q={q} /> */}
+
+
+
+
+                </div>
+
+            </div>
+        </>
+    );
+}
 
 export default BooksPage;
