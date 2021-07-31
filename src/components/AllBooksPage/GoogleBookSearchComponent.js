@@ -1,16 +1,9 @@
-import { Link } from "react-router-dom";
 import "./Bookspage.css";
-import { Fragment, useRef, useState } from 'react'
-
 import BookDetailsModal from "./OneBoolPopUpComponent";
-
 
 const GoogleBookSearchComponent = (props) => {
   console.log(props.data);
   const data = props.data;
-  
-  const [open, setOpen] = useState(false)
-  const cancelButtonRef = useRef(null)
 
   if (data.items) {
     return (
@@ -25,47 +18,21 @@ const GoogleBookSearchComponent = (props) => {
                 const src = book.volumeInfo.imageLinks === undefined ? "" : `${book.volumeInfo.imageLinks.thumbnail}`;
                 const {
                   id,
-                  saleInfo,
-                  retailPrice,
-                  searchInfo,
-                  description,
                   volumeInfo,
                 } = book;
                 return (
                   <div key={id}
                     className="bg-gray-100 px-0 py-0 pb-2 sm:pb-5 rounded-lg my-bookView"  >
-                    {/* <Link to={{
-                      pathname: '/BookDetailsPage',
-                      state: { book }
-                    }}
-                    > */}
-                      <div >
-                        <img
-                          src={src}
-                          // src={`https://books.google.com/books?id=${id}&printsec=frontcover&img=1&zoom=4&source=gbs_api`}
-                          alt={volumeInfo.title}
-                          className="block mx-auto w-full"
-                        />
-                      </div>
-                    {/* </Link>
-                    <Link to={{
-                      pathname: '/BookDetailsPage',
-                      state: { book }
-                    }}
-                    > */}
 
-<BookDetailsModal book={book}>
-                   
+                    <div >
+                      <img
+                        src={src}
+                        alt={volumeInfo.title}
+                        className="block mx-auto w-full"
+                      />
+                    </div>
+                    <BookDetailsModal book={book}>
                     </BookDetailsModal>
-
-                      {/* <div className="px-2 sm:px-4 text-left">
-                        <h3 className=" font-bold my-2 text-1xl sm:text-1xl">{volumeInfo.title} </h3>
-                        <p>
-                          <span className="font-bold">By  </span>
-                          {volumeInfo.authors || "Anonymous"}
-                        </p>
-                      </div> */}
-                    {/* </Link> */}
                   </div>
                 );
               })}
@@ -74,7 +41,6 @@ const GoogleBookSearchComponent = (props) => {
         )}
       </>
     );
-
 
   } else {
     return (
@@ -87,26 +53,13 @@ const GoogleBookSearchComponent = (props) => {
               "  >
               {data.results.books.map((book) => {
                 const {
-                  author,
                   book_image,
-                  // buy_links,
-                  // description,
-                  // price,
                   primary_isbn10,
-                  // publisher,
-                  // primary_isbn13,
-                  // rank,
                   title,
                 } = book;
-
                 return (
-                  <div key={primary_isbn10} 
+                  <div key={primary_isbn10}
                     className="bg-gray-100 px-0 py-0 pb-2 sm:pb-5 rounded-lg my-bookView"  >
-                    {/* <Link to={{
-                      pathname: '/BookDetailsPage',
-                      state: { book }
-                    }}
-                    > */}
                     <div >
                       <img
                         src={book_image}
@@ -114,45 +67,18 @@ const GoogleBookSearchComponent = (props) => {
                         className="block mx-auto w-full"
                       />
                     </div>
-                    {/* </Link>
-                    <Link to={{
-                      pathname: '/BookDetailsPage',
-                      state: { book }
-                    }}
-                    > */}
-                     <BookDetailsModal book={book}>
-                   
+                    <BookDetailsModal book={book}>
                     </BookDetailsModal>
-                    {/* </Link> */}
-
-
-                    
                   </div>
-
-
-
                 );
               }
-
-
-
-
               )}
             </section>
           </div>
         )}
-
-
-
-
-
-
-
-
       </>
     )
   }
-
 }
 
 export default GoogleBookSearchComponent;

@@ -1,12 +1,11 @@
-/* This example requires Tailwind CSS v2.0+ */
 import { Fragment, useRef, useState } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
-import { ExclamationIcon } from '@heroicons/react/outline'
 import { Redirect } from 'react-router-dom';
 import "./BookDetailsPage.css";
+import ByLinksComponent from './ByeLinksComponent';
 
 export default function BookDetailsModal(props) {
-  console.log(props.book)
+  // console.log(props.book)
   const [open, setOpen] = useState(false);
   const cancelButtonRef = useRef(null);
   const {
@@ -15,7 +14,6 @@ export default function BookDetailsModal(props) {
     buy_links,
     description,
     price,
-    primary_isbn10,
     publisher,
     rank_last_week,
     rank,
@@ -32,7 +30,7 @@ export default function BookDetailsModal(props) {
         <div 
         onClick={() => setOpen(true)}
         className="my-mouse-pointer px-2 sm:px-4 text-left">
-                      <h3 className=" font-bold my-2 text-1xl sm:text-1xl">{title} </h3>
+                      <h3 className=" font-bold my-2 text-1xl sm:text-1xl">{title || volumeInfo.title} </h3>
                       <p>
                         <span className="font-bold">By  </span>
                         {/* {author} */}
@@ -83,7 +81,7 @@ export default function BookDetailsModal(props) {
                       {/* <div className="mx-auto flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-full bg-red-100 sm:mx-0 sm:h-10 sm:w-10">
                     <ExclamationIcon className="h-6 w-6 text-red-600" aria-hidden="true" />
                   </div> */}
-                      <div className="px-0 text-center sm:mt-0 sm:ml-0 pt-0 sm:text-left">
+                      <div className="px-0 text-left sm:mt-0 sm:ml-0 pt-0 sm:text-left">
                         {/* <Dialog.Title as="h3" className="text-lg leading-6 font-medium text-gray-900">
                       {title}
                     </Dialog.Title> */}
@@ -148,12 +146,12 @@ export default function BookDetailsModal(props) {
                                     <h2 className="text-sm title-font text-gray-300 tracking-widest pt-5 ">Published By {publisher || volumeInfo.publisher} Books.</h2>
 
 
-                                    {/* 
+                                    
                 <div className="mt-5">
                   <h4 className="mb-2 text-lgtitle-font font-medium mb-1">Buy Links</h4>
                   <ByLinksComponent buy_links = {buy_links || null} saleInfo = {saleInfo || null} />
                 
-                </div> */}
+                </div>
 
                                   </div>
                                 </div>

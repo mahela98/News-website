@@ -1,7 +1,7 @@
 import { useLocation } from "react-router";
 import { Redirect } from 'react-router-dom';
 // import "./BookDetailsPage.css";
-import ByLinksComponent from "./ByeLinksComponent";
+import ByLinksComponent from "../AllBooksPage/ByeLinksComponent";
 
 const BookDetailsPage = () => {
   const location = useLocation();
