@@ -5,6 +5,7 @@ import Footer from "./components/Footer/Footer";
 import GoogleBookSearch from "./components/AllBooksPage/GoogleBookSearchComponent";
 import BooksPage from "./components/AllBooksPage/BooksPage";
 import LoadingComponent from "./components/LoadingComponent/LoadingComponent";
+import HomeComponent from "./components/HomeComponent/HomeComponent";
 
 function App() {
   return (
@@ -12,6 +13,9 @@ function App() {
       <div className="App">
         <Navbar />
         <Switch>
+        <Route exact path="/">
+            <HomeComponent />
+          </Route>
           <Route exact path="/books">
             <BooksPage />
           </Route>
