@@ -27,14 +27,14 @@ const BooksPage = () => {
                     <h1 className=" font-bold text-center ml-5 text-2xl pt-5 sm:pb-5 sm:text-left">BOOKS</h1>
                     <div>
                         <div className="shadow grid pt-5 mr-5 ml-5">
-                            <form onSubmit={handleSubmit} className="grid grid-cols-2">
+                            <form onSubmit={handleSubmit} className="grid grid-cols-12">
                                 <input
                                     onChange={e => setQ(e.target.value)}
                                     value={q}
-                                    className="my-input w-full rounded p-2" type="text" placeholder="Search..." />
+                                    className="my-input col-span-8 rounded p-2  " type="text" placeholder="Search..." />
                                 <button
                                     type="submit"
-                                    className=" my-btn rounded bg-white w-auto flex justify-end items-center text-blue-500 p-2 hover:text-blue-400">
+                                    className=" my-btn w-auto col-span-4 rounded bg-white  flex justify-end items-center text-blue-500 p-2 hover:text-blue-400">
                                     <i className='material-icons'>search</i>
                                 </button>
                             </form>
