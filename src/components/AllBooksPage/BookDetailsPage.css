@@ -43,3 +43,8 @@ font-size: 20px;
     outline: 1px red !important;
     border: none;
 }
+
+.my-mouse-pointer:hover{
+    cursor: pointer;
+    color:  rgb(0, 217, 255);   
+}

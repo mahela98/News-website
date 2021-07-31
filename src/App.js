@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import BookDetailsPage from "./components/OneBookDetailsPage/BookDetailsPage";
-import Test from "./components/test1";
+import Test from "./components/AllBooksPage/OneBoolPopUpComponent";
 import Navbar from "./components/Navbar/Navbar";
 import ProfilePage from "./components/ProfilePage/ProfillePage";
 import Footer from "./components/Footer/Footer";

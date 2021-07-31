@@ -3,8 +3,9 @@ import { Fragment, useRef, useState } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
 import { ExclamationIcon } from '@heroicons/react/outline'
 import { Redirect } from 'react-router-dom';
+import "./BookDetailsPage.css";
 
-export default function Example(props) {
+export default function BookDetailsModal(props) {
   console.log(props.book)
   const [open, setOpen] = useState(false);
   const cancelButtonRef = useRef(null);
@@ -27,7 +28,18 @@ export default function Example(props) {
 
     return (
       <div>
-        <button onClick={() => setOpen(true)}>kjahsd</button>
+        {/* <button onClick={() => setOpen(true)}>kjahsd</button> */}
+        <div 
+        onClick={() => setOpen(true)}
+        className="my-mouse-pointer px-2 sm:px-4 text-left">
+                      <h3 className=" font-bold my-2 text-1xl sm:text-1xl">{title} </h3>
+                      <p>
+                        <span className="font-bold">By  </span>
+                        {/* {author} */}
+                        {author || volumeInfo.authors || "Anonymous"}
+                      </p>
+                    </div>
+
         <Transition.Root show={open} as={Fragment}>
           <Dialog
             as="div"

@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import "./Bookspage.css";
 import { Fragment, useRef, useState } from 'react'
 
-import Example from "../test1";
+import BookDetailsModal from "./OneBoolPopUpComponent";
 
 
 const GoogleBookSearchComponent = (props) => {
@@ -34,11 +34,11 @@ const GoogleBookSearchComponent = (props) => {
                 return (
                   <div key={id}
                     className="bg-gray-100 px-0 py-0 pb-2 sm:pb-5 rounded-lg my-bookView"  >
-                    <Link to={{
+                    {/* <Link to={{
                       pathname: '/BookDetailsPage',
                       state: { book }
                     }}
-                    >
+                    > */}
                       <div >
                         <img
                           src={src}
@@ -47,20 +47,25 @@ const GoogleBookSearchComponent = (props) => {
                           className="block mx-auto w-full"
                         />
                       </div>
-                    </Link>
+                    {/* </Link>
                     <Link to={{
                       pathname: '/BookDetailsPage',
                       state: { book }
                     }}
-                    >
-                      <div className="px-2 sm:px-4 text-left">
+                    > */}
+
+<BookDetailsModal book={book}>
+                   
+                    </BookDetailsModal>
+
+                      {/* <div className="px-2 sm:px-4 text-left">
                         <h3 className=" font-bold my-2 text-1xl sm:text-1xl">{volumeInfo.title} </h3>
                         <p>
                           <span className="font-bold">By  </span>
                           {volumeInfo.authors || "Anonymous"}
                         </p>
-                      </div>
-                    </Link>
+                      </div> */}
+                    {/* </Link> */}
                   </div>
                 );
               })}
@@ -115,14 +120,9 @@ const GoogleBookSearchComponent = (props) => {
                       state: { book }
                     }}
                     > */}
-                     <Example book={book}></Example>
-                    <div className="px-2 sm:px-4 text-left">
-                      <h3 className=" font-bold my-2 text-1xl sm:text-1xl">{title} </h3>
-                      <p>
-                        <span className="font-bold">By  </span>
-                        {author}
-                      </p>
-                    </div>
+                     <BookDetailsModal book={book}>
+                   
+                    </BookDetailsModal>
                     {/* </Link> */}
 
 
