@@ -1,9 +1,8 @@
 import React from 'react';
 import GoogleBookSearch from "./GoogleBookSearchComponent";
-import NYTBooksComponent from "./NYTBooksComponent";
-import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { useState } from "react";
 import useFetchFunction from "../../fetch/useFetchFunction";
+import LoadingComponent from '../LoadingComponent/LoadingComponent';
 
 const BooksPage = () => {
     const [q, setQ] = useState("");
@@ -11,10 +10,10 @@ const BooksPage = () => {
 
     const handleSubmit = (evt) => {
         evt.preventDefault();
-        if (q != "") {
+        if (q !== "") {
             setUrl(`https://www.googleapis.com/books/v1/volumes?q=${q}&orderBy=relevance&zoom=0&key=AIzaSyAxuX41zCdY1lL6jpZPSZodtP6ItpH46gk&maxResults=15&projection=full&printType=books`);
         }
-        else if (q == "") {
+        else if (q === "") {
             setUrl(`https://api.nytimes.com/svc/books/v3/lists/current/hardcover-fiction.json?api-key=${process.env.REACT_APP_NYT_BOOKS_API_KEY}`);
         }
 
@@ -42,9 +41,10 @@ const BooksPage = () => {
                     </div>
                 </div>
                 <div>
-                    {isPending && <div>is pending</div>}
+                    {isPending && <LoadingComponent/>}
                     {error && <div>{error}</div>}
                     {data && <GoogleBookSearch data={data} />}
+                   
                 </div>
 
             </div>
