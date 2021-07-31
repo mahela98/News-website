@@ -14,3 +14,32 @@ font-size: 20px;
     padding: 10px;
     
 }
+
+.my-btn-book-view{
+    background-color: rgb(26, 26, 29);
+    color: rgb(255, 0, 0);
+    border: 1px solid rgb(255, 0, 0); 
+}
+.my-btn-book-view:hover{
+    background-color: rgb(26, 26, 29);
+    color: rgb(255, 0, 0);
+    letter-spacing: 2px;
+}
+
+.my-close-button{
+    color: rgb(255, 255, 255) !important;
+    font-weight: 500;
+    cursor: pointer;
+    background-color: rgba(255, 0, 0, 0.767);
+    border: red;
+    border-radius: 15px;
+}
+.my-close-button:hover{
+    color: rgb(255, 0, 0) !important;
+    background-color: rgb(26, 26, 29);
+
+}
+.my-outline{
+    outline: 1px red !important;
+    border: none;
+}
