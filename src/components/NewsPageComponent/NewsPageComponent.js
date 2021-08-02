@@ -1,19 +1,25 @@
-import { useState } from "react";
+import { useLocation } from "react-router";
 import useFetchFunction from "../../fetch/useFetchFunction";
 import LoadingComponent from "../LoadingComponent/LoadingComponent";
 import "./NewsPage.css";
 
 const NewsPageComponent = () => {
-    const [q, setQ] = useState("");
-    const [url, setUrl] = useState(`https://newsapi.org/v2/top-headlines?country=us&apiKey=2cea5e58b869495cb8b60de7506e914f&pageSize=15&page=1&category=science`);
+    const location = useLocation();
+    const { title, q } = location.state;
+
+    // console.log(title);
+    const quary = q || "science";
+    const url = `https://newsapi.org/v2/top-headlines?language=en&apiKey=2cea5e58b869495cb8b60de7506e914f&pageSize=25&page=1&category=${quary}`;
     const { data, isPending, error } = useFetchFunction(url);
-    
+
     return (
         <>
             {isPending && <LoadingComponent />}
             {error && <div>{error}</div>}
             {data && (
                 <div className="body-background">
+                    <div className="my-background-for-h2 py-3 pl-10  text-3xl sm:text-3xl text-gray-200 font-semibold">{title} </div>
+
                     <div className="py-10 px-5 sm:px-10 ">
                         {data.articles.map((article) => {
                             const {
@@ -26,8 +32,10 @@ const NewsPageComponent = () => {
                                 content,
                                 publishedAt,
                             } = article;
+                            var d = new Date(publishedAt).toDateString();
+
                             return (
-                                <div key={urlToImage} className="pb-5">
+                                <div key={url} className="pb-5">
                                     <div className=" w-full lg:max-w-full lg:flex rounded my-hover">
                                         <div className="my-image h-48 lg:h-auto lg:w-1/3 flex-none bg-cover rounded-t
                      lg:rounded-t-none lg:rounded-l text-center overflow-hidden"
@@ -56,11 +64,12 @@ const NewsPageComponent = () => {
                                                     {content}
                                                 </p>
                                             </div>
-                                            <div className="flex items-center">
+                                            <div className="flex items-center grid grid-cols-2">
                                                 <div className="text-sm">
                                                     <p className="text-gray-900 leading-none">{author}</p>
-                                                    <p className="text-gray-600">{publishedAt}</p>
+                                                    <p className="text-gray-600">{d}</p>
                                                 </div>
+                                                <div className="text-sm my-link text-right"> <a href={url}>Read More..</a> </div>
                                             </div>
                                         </div>
                                     </div>
