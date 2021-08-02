@@ -1,5 +1,11 @@
+.body-background{
+    background: rgb(26, 26, 29);
+
+}
+
 .myHeader{
     border: 2px solid black;
+   
 }
 .my-background{
     /* background-image: url("https://images.pexels.com/photos/313782/pexels-photo-313782.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"); */
@@ -7,6 +13,7 @@ background-image:url(../../Images/pexels-roberto-nickson-2478248.jpg) ;
     background-repeat: no-repeat;
 background-size: cover;
 background-position:center ;
+border-bottom: 3px solid rgb(0, 247, 255);
 /* background-blend-mode:multiply; */
 }
 .my-background2{
@@ -17,4 +24,18 @@ background-position:center ;
     color: rgb(119, 235, 255);   
     background-color:rgba(20, 20, 20, 0.705) ;
     
+}
+.card-title{
+    background-color:rgb(48, 48, 48)  ;
+    color: rgb(119, 235, 255);;
+}
+
+.news-card{
+    background-color:rgb(48, 48, 48)  ;
+
+}
+.news-card:hover{
+    transform: scale(1.02);
+    border-bottom: 3px solid rgb(119, 235, 255); 
+    cursor: pointer;  
 }
