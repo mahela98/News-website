@@ -1,41 +1,49 @@
-.body-background{
-    background: rgb(26, 26, 29);
-
+.body-background {
+  background: rgb(18, 18, 20);
 }
 
-.myHeader{
-    border: 2px solid black;
-   
+.myHeader {
+  border: 2px solid black;
 }
-.my-background{
-    /* background-image: url("https://images.pexels.com/photos/313782/pexels-photo-313782.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"); */
-background-image:url(../../Images/pexels-roberto-nickson-2478248.jpg) ;
-    background-repeat: no-repeat;
-background-size: cover;
-background-position:center ;
-border-bottom: 3px solid rgb(0, 247, 255);
-/* background-blend-mode:multiply; */
+.my-background {
+  /* background-image: url("https://images.pexels.com/photos/313782/pexels-photo-313782.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"); */
+  background-image: url(../../Images/pexels-roberto-nickson-2478248.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  border-bottom: 3px solid rgb(0, 247, 255);
+  /* background-blend-mode:multiply; */
 }
-.my-background2{
-    background-color:rgba(31, 31, 31, 0.281) ;
+.my-background2 {
+  background-color: rgba(7, 0, 44, 0.281);
 }
-.home-header-title{
-    font-family: 'Oswald', sans-serif;
-    color: rgb(119, 235, 255);   
-    background-color:rgba(20, 20, 20, 0.705) ;
-    
-}
-.card-title{
-    background-color:rgb(48, 48, 48)  ;
-    color: rgb(119, 235, 255);;
+.home-header-title {
+  font-family: "Oswald", sans-serif;
+  color: rgb(119, 235, 255);
+  background-color: rgba(1, 0, 22, 0.705);
 }
 
-.news-card{
-    background-color:rgb(48, 48, 48)  ;
 
+.news-card {
+  /* background-color:rgba(2, 0, 29, 0.466)  ; */
+  /* border: 1px solid rgb(255, 255, 255); */
+
+  box-shadow: 2px 2px rgba(0, 0, 0, 0.644);
+  /* border-bottom: 1px solid rgb(255, 255, 255); */
 }
-.news-card:hover{
-    transform: scale(1.02);
-    border-bottom: 3px solid rgb(119, 235, 255); 
-    cursor: pointer;  
+.news-card:hover {
+  transform: scale(1.02);
+  border: none;
+  border-bottom: 3px solid rgb(119, 235, 255);
+  cursor: pointer;
+  background-color: rgba(0, 4, 24, 0.658) !important;
+}
+.my-background-for-h2 {
+  background-color: rgb(0, 0, 20);
+  border-bottom: 2px solid rgb(255, 255, 255);
+}
+.link-hover:hover {
+  letter-spacing: 1px;
+  color: rgb(119, 235, 255);
+  cursor: pointer;
 }

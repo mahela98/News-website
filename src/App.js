@@ -6,6 +6,7 @@ import GoogleBookSearch from "./components/AllBooksPage/GoogleBookSearchComponen
 import BooksPage from "./components/AllBooksPage/BooksPage";
 import LoadingComponent from "./components/LoadingComponent/LoadingComponent";
 import HomeComponent from "./components/HomeComponent/HomeComponent";
+import NewsPageComponent from "./components/NewsPageComponent/NewsPageComponent";
 
 function App() {
   return (
@@ -27,6 +28,9 @@ function App() {
           </Route>
           <Route path="/test">
             <LoadingComponent />
+          </Route>
+          <Route path="/news">
+            <NewsPageComponent />
           </Route>
         </Switch>
         <Footer />
