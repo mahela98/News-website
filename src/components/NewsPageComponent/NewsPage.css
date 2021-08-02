@@ -1,3 +1,14 @@
 .my-image{
 background-image: url(../../Images/pexels-roberto-nickson-2478248.jpg) ;
 }
+
+.my-hover{
+    /* background-color:white ; */
+}
+.my-hover:hover{
+    transform: scale(1.005);
+  border:none ;
+  outline: none;
+  border-bottom: 2px solid rgb(119, 235, 255);
+  cursor: pointer;
+}
