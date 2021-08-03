@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { useLocation } from "react-router";
 import useFetchFunction from "../../fetch/useFetchFunction";
 import LoadingComponent from "../LoadingComponent/LoadingComponent";
@@ -5,20 +6,28 @@ import "./NewsPage.css";
 
 const NewsPageComponent = () => {
     const location = useLocation();
-    const { title, q } = location.state;
+    const [quary,setQuary]=useState("general");
+    const [pageTitle,setPageTitle]=useState("General");
 
-    // console.log(title);
-    const quary = q || "science";
+    try {
+        const { title, q } = location.state;
+        setQuary(q);
+        setPageTitle(title);
+    } catch (error) {
+     console.log("defalt");
+    }
     const url = `https://newsapi.org/v2/top-headlines?language=en&apiKey=2cea5e58b869495cb8b60de7506e914f&pageSize=25&page=1&category=${quary}`;
     const { data, isPending, error } = useFetchFunction(url);
 
     return (
         <>
+        <div className="bookspageBody">
             {isPending && <LoadingComponent />}
             {error && <div>{error}</div>}
             {data && (
-                <div className="body-background">
-                    <div className="my-background-for-h2 py-3 pl-10  text-3xl sm:text-3xl text-gray-200 font-semibold">{title} </div>
+                <div >
+                    <div className="my-background-for-h2 py-2 sm:py-3 pl-5 sm:pl-10 
+                     text-2xl sm:text-3xl text-gray-200 font-semibold">{pageTitle} </div>
 
                     <div className="py-10 px-5 sm:px-10 ">
                         {data.articles.map((article) => {
@@ -69,7 +78,7 @@ const NewsPageComponent = () => {
                                                     <p className="text-gray-900 leading-none">{author}</p>
                                                     <p className="text-gray-600">{d}</p>
                                                 </div>
-                                                <div className="text-sm my-link text-right"> <a href={url}>Read More..</a> </div>
+                                                <div className="text-sm  text-right"> <a href={url}>Read More..</a> </div>
                                             </div>
                                         </div>
                                     </div>
@@ -81,6 +90,7 @@ const NewsPageComponent = () => {
 
                 </div>
             )}
+            </div>
         </>);
 }
 

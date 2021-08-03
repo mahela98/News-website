@@ -5,7 +5,7 @@ import "./Navbar.css";
 
 
 const navigation = [
-    { name: 'Home', href: '/', current: false },
+    { name: 'News', href: '/news', current: false },
     { name: 'Books', href: '/books', current: false },
     { name: 'Movies', href: '#', current: false },
     { name: 'About', href: '/test', current: false },

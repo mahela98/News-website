@@ -6,8 +6,8 @@
     color: rgb(0, 217, 255);   
 }
 .my-link:hover{
-color: rgb(0, 128, 167);
-font-size: 20px;
+color: rgb(0, 128, 167) !important;
+font-size: 20px !important;
 }
 .my-boder{
     border: 2px solid white;
