@@ -43,7 +43,7 @@
   border-bottom: 2px solid rgb(255, 255, 255);
 }
 .link-hover:hover {
-  letter-spacing: 1px;
+  /* letter-spacing: 1px; */
   color: rgb(119, 235, 255);
-  cursor: pointer;
+  /*cursor: pointer; */
 }

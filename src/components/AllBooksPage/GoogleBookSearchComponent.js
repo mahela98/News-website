@@ -48,8 +48,8 @@ const GoogleBookSearchComponent = (props) => {
         {data && (
           <div>
             <section
-              className="grid grid-cols-2 gap-3 px-3 sm:gap-5 sm:px-5 pb-20 pt-5
-              sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 xl:gap-8
+              className="grid grid-cols-2 gap-3 px-3 xl:px-10 sm:gap-5 sm:px-5 pb-20 pt-5
+              sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 xl:gap-5
               "  >
               {data.results.books.map((book) => {
                 const {
