@@ -1,12 +1,6 @@
-import { Fragment, useRef, useState } from 'react'
-import { Dialog, Transition } from '@headlessui/react'
-import { Redirect } from 'react-router-dom';
-import { Link } from 'react-router-dom';
-import MovieFullInfo from './MovieFullInfoComponent';
-
-const MovieDetsilsPopup = (props) => {
-    const [open, setOpen] = useState(false);
-    const cancelButtonRef = useRef(null);
+import { Link } from "react-router-dom";
+const InfoPage = ({data}) => {
+   
     const {
         original_title,
         overview,
@@ -17,61 +11,15 @@ const MovieDetsilsPopup = (props) => {
         poster_path,
         vote_count,
         backdrop_path,
-    } = props.movie;
+    } = data;
     const movie_image = `https://image.tmdb.org/t/p/original/${poster_path}`;
     const movie_Bc_Image = `https://image.tmdb.org/t/p/original/${backdrop_path}`;
-
     return (
         <>
-            <div>
-                <div
-                    onClick={() => setOpen(true)}
-                    className="my-mouse-pointer " >
-                    <div >
-                        <img
-                            src={movie_image}
-                            alt={original_title}
-                            className="block mx-auto w-full"
-                        />
-                    </div>
-                    <h3 className=" px-2 sm:px-2 text-left font-bold my-2 text-1xl sm:text-1xl">{original_title} </h3>
-                </div>
-                <Transition.Root show={open} as={Fragment}>
-                    <Dialog
-                        as="div"
-                        static
-                        className="fixed z-10 inset-0 overflow-y-auto"
-                        initialFocus={cancelButtonRef}
-                        open={open}
-                        onClose={setOpen}
-                    >
-                        <div className="flex items-end 
-                justify-center min-h-screen pt-20 px-5 pb-20 text-center sm:block sm:pt-30 xl:pt-0 lg-px-10">
-                            <Transition.Child
-                                as={Fragment}
-                                enter="ease-out duration-300"
-                                enterFrom="opacity-0"
-                                enterTo="opacity-100"
-                                leave="ease-in duration-200"
-                                leaveFrom="opacity-100"
-                                leaveTo="opacity-0"
-                            >
-                                <Dialog.Overlay className="fixed  inset-0 bg-gray-500 bg-opacity-75 transition-opacity" />
-                            </Transition.Child>
-                            {/* This element is to trick the browser into centering the modal contents. */}
-                            <span className="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">
-                                &#8203;
-                            </span>
-                            <Transition.Child
-                                as={Fragment}
-                                enter="ease-out duration-300"
-                                enterFrom="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
-                                enterTo="opacity-100 translate-y-0 sm:scale-100"
-                                leave="ease-in duration-200"
-                                leaveFrom="opacity-100 translate-y-0 sm:scale-100"
-                                leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
-                            >
-                                <div className="inline-block pt-0 align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all ">
+       
+       
+
+       <div className="inline-block pt-0 align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all ">
                                     <div className="bg-white px-0 pt-0 pb-0 sm:p-0 sm:pb-0">
                                         <div className="sm:flex sm:items-start">
                                             {/* <div className="mx-auto flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-full bg-red-100 sm:mx-0 sm:h-10 sm:w-10">
@@ -85,10 +33,7 @@ const MovieDetsilsPopup = (props) => {
                                                     <div
                                                         className="my-outline book-details-body pb-0 px-5 pt-2 sm:pt-5 sm:px-10 flex flex-row-reverse"
                                                     >
-                                                        <p onClick={() => setOpen(false)}
-                                                            ref={cancelButtonRef}
-                                                            className="my-close-button px-2 focus:outline-none "
-                                                        >X</p>
+                                                  
                                                     </div>
                                                     <>
                                                         <section className="book-details-body body-font overflow-hidden" >
@@ -150,28 +95,15 @@ const MovieDetsilsPopup = (props) => {
                                     </div>
                                     <div className="book-details-body bg-gray-50 px-0 py-0 sm:px-0 flex sm:flex-row-reverse">
 
-                                        <button
-                                            type="button"
-                                            className="my-btn-book-view px-0 py-2 my-5 mx-5 sm:mr-5 sm:ml-5 lg:mx-10
-                       w-full sm:w-1/3 inline-flex justify-center
-                   rounded-md border border-gray-300 shadow-sm  bg-white text-base 
-                   font-medium   focus:outline-none 
-                     "
-                                            onClick={() => setOpen(false)}
-                                            ref={cancelButtonRef}
-                                        >
-                                            Cancel
-                                        </button>
+                           
                                     </div>
                                 </div>
-                            </Transition.Child>
-                        </div>
-                    </Dialog>
-                </Transition.Root>
-            </div>
+
+
+
 
         </>
-    );
+      );
 }
-
-export default MovieDetsilsPopup;
+ 
+export default InfoPage;

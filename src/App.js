@@ -8,6 +8,7 @@ import LoadingComponent from "./components/LoadingComponent/LoadingComponent";
 import HomeComponent from "./components/HomeComponent/HomeComponent";
 import NewsPageComponent from "./components/NewsPageComponent/NewsPageComponent";
 import MovieMainPage from "./components/MoviePageComponent/MovieMainPage";
+import MovieFullInfo from "./components/MoviePageComponent/MovieFullInfoComponent";
 
 function App() {
   return (
@@ -35,6 +36,9 @@ function App() {
           </Route>
           <Route path="/movie">
             <MovieMainPage />
+          </Route>
+          <Route path="/movieinfo">
+            <MovieFullInfo />
           </Route>
         </Switch>
         <Footer />
