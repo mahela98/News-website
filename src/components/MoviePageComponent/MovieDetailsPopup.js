@@ -1,8 +1,6 @@
 import { Fragment, useRef, useState } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
-import { Redirect } from 'react-router-dom';
 import { Link } from 'react-router-dom';
-import MovieFullInfo from './MovieFullInfoComponent';
 
 const MovieDetsilsPopup = (props) => {
     const [open, setOpen] = useState(false);
@@ -13,14 +11,10 @@ const MovieDetsilsPopup = (props) => {
         release_date,
         vote_average,
         id,
-        popularity,
         poster_path,
         vote_count,
-        backdrop_path,
     } = props.movie;
     const movie_image = `https://image.tmdb.org/t/p/original/${poster_path}`;
-    const movie_Bc_Image = `https://image.tmdb.org/t/p/original/${backdrop_path}`;
-
     return (
         <>
             <div>
