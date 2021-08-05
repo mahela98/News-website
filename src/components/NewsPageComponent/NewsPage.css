@@ -18,3 +18,14 @@ background-image: url(../../Images/pexels-roberto-nickson-2478248.jpg) ;
   color: rgb(14, 78, 255);
   font-size: small;
 }
+
+.bg-titlebar{
+  background-color: rgb(233, 233, 233);
+  border-bottom: 1px solid rgb(1, 0, 37);
+  color: rgb(8, 0, 37);
+
+}
+.bg-titlebar:hover{
+  background-color: rgba(45, 255, 255, 0.616);
+  color: rgb(3, 0, 22);
+}

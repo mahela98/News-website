@@ -1,4 +1,5 @@
 import "./InfoPage.css"
+import YoutubeEmbeded from "./YoutubeEmbeded";
 const InfoPage = ({ data }) => {
     try {
         
@@ -20,7 +21,7 @@ const InfoPage = ({ data }) => {
     const movie_Bc_Image = `https://image.tmdb.org/t/p/original/${backdrop_path}`;
     return (
         <>
-            <section className=" body-font overflow-hidden "
+            <section className=" body-font overflow-hidden"
                 style={{
                     backgroundImage: `url("${movie_Bc_Image}")`,
                     backgroundPosition: 'center',
@@ -28,12 +29,12 @@ const InfoPage = ({ data }) => {
                     backgroundRepeat: 'no-repeat'
                 }}
             >
-                <div className="my-bg-infopage">
+                <div className="my-bg-infopage ">
                     <div className="container px-0 py-0 pt-5 sm:pt-10 mx-auto pb-20">
-                        <div className=" sm:w-4/5 mx-auto flex flex-wrap content-center my-boder rounded book-details-body">
+                        <div className=" sm:w-4/5 mx-auto flex flex-wrap content-center my-boder rounded my-box-inside">
                             <img alt={id} className="w-4/5 pl-20 sm:pl-0 sm:w-1/2 xl:w-1/3 
             lg:h-auto h-full object-cover  object-center rounded" src={movie_image} />
-                            <div className="lg:w-1/2 w-full lg:pl-10  lg:py-0 mt-3 lg:mt-0">
+                            <div className="lg:w-1/2 w-full lg:pl-10  lg:py-0 mt-3 lg:mt-0 pb-5">
                                 <h1 className="my-title-text text-xl sm:text-2xl md:text-3xl title-font font-medium mb-1">{original_title}</h1>
 
                                 <div className="flex mb-0 ">
@@ -64,7 +65,7 @@ const InfoPage = ({ data }) => {
                                 <div className="flex pb-3 ">
                                 </div>
 
-                                <p className="leading-relaxed">{overview}</p>
+                                <p className="leading-relaxed text-sm sm:text-lg ">{overview}</p>
                                 <p className="text-sm title-font text-gray-200 tracking-widest pt-5 "> {tagline} </p>
 
                                 {release_date && (<p className="text-sm title-font text-gray-200 tracking-widest pt-5 ">Release Date: {release_date} </p>
@@ -77,7 +78,12 @@ const InfoPage = ({ data }) => {
                                 )}
                             </div>
                         </div>
-                        <div>youtube links</div>
+                        <div className="pt-5 sm:pt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-0 items-center">
+                            
+                        <YoutubeEmbeded/><YoutubeEmbeded/><YoutubeEmbeded/>
+                       
+
+                            </div>
 
                     </div>
                 </div>

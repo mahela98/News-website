@@ -8,7 +8,7 @@ const NewsPageComponent = () => {
     const location = useLocation();
     var quary = "general";
     var pageTitle = "General";
-
+    const proxyUrl = "https://cors-anywhere.herokuapp.com/";
     try {
         const { title, q } = location.state;
         quary = q;
@@ -80,7 +80,7 @@ const NewsPageComponent = () => {
                                                         <p className="text-gray-900 leading-none">{author}</p>
                                                         <p className="text-gray-600">{d}</p>
                                                     </div>
-                                                    <div className="text-sm  text-right"> <a href={url}>Read More..</a> </div>
+                                                    <div className="text-sm  text-right"> <a target="_blank" rel="noopener noreferrer" href={url}>Read More..</a> </div>
                                                 </div>
                                             </div>
                                         </div>
