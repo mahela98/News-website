@@ -124,7 +124,7 @@ const MovieDetsilsPopup = (props) => {
 
                                                                         <p className="leading-relaxed">{overview}</p>
                                                                         <h2 className="text-sm title-font text-gray-300 tracking-widest pt-5 ">Release Date: {release_date} </h2>
-                                                                        <h2 className="text-sm title-font text-gray-300 tracking-widest pt-5 ">
+                                                                        <h2 className="text-sm title-font text-blue-400 hover:text-blue-600 tracking-widest pt-5 ">
                                                                             <Link to={{
                                                                                 pathname: "/movieinfo",
                                                                                 state: {

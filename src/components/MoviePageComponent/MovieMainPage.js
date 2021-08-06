@@ -3,9 +3,8 @@ import LoadingComponent from "../LoadingComponent/LoadingComponent";
 import MovieDetsilsPopup from "./MovieDetailsPopup";
 
 const MovieMainPage = () => {
-    // var books;
-    const { data, isPending, error } = useFetchFunction(`https://api.themoviedb.org/3/movie/now_playing?api_key=${process.env.REACT_APP_THE_MOVIE_DB_API_KEY}&language=en-US&page=1`);
-    // data && (books = data.results.books.slice(0, 5));
+    const type = "now_playing";
+    const { data, isPending, error } = useFetchFunction(`https://api.themoviedb.org/3/movie/${type}?api_key=${process.env.REACT_APP_THE_MOVIE_DB_API_KEY}&language=en-US&page=1`);
 
     return (<>
         <div className="body-background pb-20 pt-5 sm:pt-10">

@@ -7,15 +7,6 @@ const YoutubeEmbeded = ({ title }) => {
 
   const { data, isPending, error } = useFetchFunction(`https://www.googleapis.com/youtube/v3/search?key=${process.env.REACT_APP_TOUTUBE_API}&order=relevance&type=video&part=snippet&q=${title} Official Trailer&maxResults=1`);
 
-
-  const opts = {
-    height: '390',
-    width: '640',
-    playerVars: {
-      // https://developers.google.com/youtube/player_parameters
-      autoplay: 0,
-    }
-  }
   return (<>
     {isPending && <LoadingComponent />}
     {error && <div>{error}</div>}
@@ -24,8 +15,6 @@ const YoutubeEmbeded = ({ title }) => {
       <div className="grid grid-cols-12 pt-10 content-center">
         <div className=" col-span-0 lg:col-span-2" ></div>
         <div className="col-span-12  lg:col-span-8 lg:px-0 px-5">
-
-
 
           {data.items.map((movie) => {
             const {
@@ -39,11 +28,7 @@ const YoutubeEmbeded = ({ title }) => {
           }
           )}
 
-
-
-
         </div>
-
         <div className=" col-span-0 lg:col-span-2" ></div>
       </div>
 

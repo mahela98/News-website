@@ -5,18 +5,7 @@ import "./Titlebar.css";
 const Titlebar = ({ pageTitle }) => {
   return (
     <>
-      {/* <div classNameName="grid grid-cols-12 my-background-for-h2 py-2 sm:py-3 px-5 sm:pl-10" >
-
-                <div classNameName="   col-start-1 col-end-7
-                     text-2xl sm:text-2xl text-gray-200 font-semibold">{pageTitle} </div>
-
-
-
-            </div> */}
-
-
       <ul className="relative  grid grid-cols-4 gap-x-0 sm:gap-x-0 sm:gap-y-0 md:grid-cols-5 lg:grid-cols-7 mx-0">
-
         <li className=" w-full">
           <Link to={{
             pathname: "/news",
