@@ -14,7 +14,7 @@ const MovieFullInfo = () => {
     } catch (error) {
         console.log("No Id");
     }
-    const url = `https://api.themoviedb.org/3/movie/${movieId}?api_key=ed59011d6c46d7a33abf946104590345&language=en-US`;
+    const url = `https://api.themoviedb.org/3/movie/${movieId}?api_key=${process.env.REACT_APP_THE_MOVIE_DB_API_KEY}&language=en-US`;
     // console.log(url);
     const { data, isPending, error } = useFetchFunction(url);
 

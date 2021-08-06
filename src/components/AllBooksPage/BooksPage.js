@@ -11,7 +11,7 @@ const BooksPage = () => {
     const handleSubmit = (evt) => {
         evt.preventDefault();
         if (q !== "") {
-            setUrl(`https://www.googleapis.com/books/v1/volumes?q=${q}&orderBy=relevance&zoom=0&key=AIzaSyAxuX41zCdY1lL6jpZPSZodtP6ItpH46gk&maxResults=15&projection=full&printType=books`);
+            setUrl(`https://www.googleapis.com/books/v1/volumes?q=${q}&orderBy=relevance&zoom=0&key=${process.env.REACT_APP_GOOGLE_BOOK_SEARCH_API}&maxResults=15&projection=full&printType=books`);
         }
         else if (q === "") {
             setUrl(`https://api.nytimes.com/svc/books/v3/lists/current/hardcover-fiction.json?api-key=${process.env.REACT_APP_NYT_BOOKS_API_KEY}`);

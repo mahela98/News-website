@@ -8,7 +8,6 @@ const NewsPageComponent = () => {
     const location = useLocation();
     var quary = "general";
     var pageTitle = "General";
-    const proxyUrl = "https://cors-anywhere.herokuapp.com/";
     try {
         const { title, q } = location.state;
         quary = q;
@@ -18,7 +17,7 @@ const NewsPageComponent = () => {
         console.log("defalt");
     }
 
-    const url = `https://newsapi.org/v2/top-headlines?language=en&apiKey=2cea5e58b869495cb8b60de7506e914f&pageSize=25&page=1&category=${quary}`;
+    const url = `https://newsapi.org/v2/top-headlines?language=en&apiKey=${process.env.REACT_APP_NEWS_API_KEY}&pageSize=25&page=1&category=${quary}`;
     const { data, isPending, error } = useFetchFunction(url);
 
     return (
@@ -29,8 +28,6 @@ const NewsPageComponent = () => {
                 {data && (
                     <div >
                         <Titlebar pageTitle={pageTitle} />
-
-
                         <div className="py-10 px-5 sm:px-10 ">
                             {data.articles.map((article) => {
                                 const {

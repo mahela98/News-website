@@ -4,7 +4,6 @@ import ProfilePage from "./components/ProfilePage/ProfillePage";
 import Footer from "./components/Footer/Footer";
 import GoogleBookSearch from "./components/AllBooksPage/GoogleBookSearchComponent";
 import BooksPage from "./components/AllBooksPage/BooksPage";
-import LoadingComponent from "./components/LoadingComponent/LoadingComponent";
 import HomeComponent from "./components/HomeComponent/HomeComponent";
 import NewsPageComponent from "./components/NewsPageComponent/NewsPageComponent";
 import MovieMainPage from "./components/MoviePageComponent/MovieMainPage";
@@ -28,9 +27,9 @@ function App() {
           <Route path="/booksearch">
             <GoogleBookSearch />
           </Route>
-          <Route path="/test">
+          {/* <Route path="/test">
             <LoadingComponent />
-          </Route>
+          </Route> */}
           <Route path="/news">
             <NewsPageComponent />
           </Route>

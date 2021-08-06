@@ -9,7 +9,7 @@ const navigation = [
     { name: 'News', href: '/news', current: false },
     { name: 'Books', href: '/books', current: false },
     { name: 'Movies', href: '/movie', current: false },
-    { name: 'About', href: '/test', current: false },
+    { name: 'About', href: '#', current: false },
 ]
 
 
@@ -75,7 +75,7 @@ export default function Example() {
 
 
                                 {/* Profile dropdown */}
-                                <Menu as="div" className="ml-3 relative">
+                                {/* <Menu as="div" className="ml-3 relative">
                                     {({ open }) => (
                                         <>
                                             <div>
@@ -132,7 +132,7 @@ export default function Example() {
                                             </Transition>
                                         </>
                                     )}
-                                </Menu>
+                                </Menu> */}
                             </div>
                         </div>
                     </div>
