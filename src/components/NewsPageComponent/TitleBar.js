@@ -15,7 +15,7 @@ const Titlebar = ({ pageTitle }) => {
             </div> */}
 
 
-      <ul className="grid grid-cols-4 gap-x-0 sm:gap-x-0 sm:gap-y-0 md:grid-cols-5 lg:grid-cols-7 mx-0">
+      <ul className="relative  grid grid-cols-4 gap-x-0 sm:gap-x-0 sm:gap-y-0 md:grid-cols-5 lg:grid-cols-7 mx-0">
 
         <li className=" w-full">
           <Link to={{
@@ -25,7 +25,9 @@ const Titlebar = ({ pageTitle }) => {
               q: "general"
             },
           }} className="bg-titlebar inline-block py-2 text-center w-full
-    text-blue-500 hover:text-blue-800 font-semibold" href="#">General</Link>
+    text-blue-500 hover:text-blue-800 font-semibold"
+    
+    >General</Link>
         </li>
         <li className="mr-1 w-full">
           <Link to={{

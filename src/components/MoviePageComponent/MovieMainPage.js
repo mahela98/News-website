@@ -8,7 +8,7 @@ const MovieMainPage = () => {
     // data && (books = data.results.books.slice(0, 5));
 
     return (<>
-        <div className="body-background py-20">
+        <div className="body-background pb-20 pt-5 sm:pt-10">
 
             {isPending && <LoadingComponent />}
             {error && <div>{error}</div>}

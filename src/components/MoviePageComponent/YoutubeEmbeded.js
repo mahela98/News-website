@@ -1,18 +1,55 @@
-const YoutubeEmbeded = () => {
-    return (<>
-    
-    <div className="aspect-w-16 aspect-h-9">
-    <iframe
-      src='https://www.youtube.com/embed/Up81uR5z88w'
-      className=" object-contain h-48 w-full px-5 mb-3"
-      frameBorder="0"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-      allowFullScreen
-      title="Embedded youtube"
-    />
-    <div className="px-5">hi</div>
-  </div>
-    </> );
+import React from 'react';
+import YouTube from 'react-youtube';
+import useFetchFunction from "../../fetch/useFetchFunction";
+import LoadingComponent from "../LoadingComponent/LoadingComponent";
+
+const YoutubeEmbeded = ({ title }) => {
+
+  const { data, isPending, error } = useFetchFunction(`https://www.googleapis.com/youtube/v3/search?key=${process.env.REACT_APP_TOUTUBE_API}&order=relevance&type=video&part=snippet&q=${title} Official Trailer&maxResults=1`);
+
+
+  const opts = {
+    height: '390',
+    width: '640',
+    playerVars: {
+      // https://developers.google.com/youtube/player_parameters
+      autoplay: 0,
+    }
+  }
+  return (<>
+    {isPending && <LoadingComponent />}
+    {error && <div>{error}</div>}
+    {data && (
+
+      <div className="grid grid-cols-12 pt-10 content-center">
+        <div className=" col-span-0 lg:col-span-2" ></div>
+        <div className="col-span-12  lg:col-span-8 lg:px-0 px-5">
+
+
+
+          {data.items.map((movie) => {
+            const {
+              id,
+            } = movie;
+            return (
+              <div key={id.videoId}>
+                <YouTube videoId={id.videoId} className=" w-full" />
+              </div>
+            );
+          }
+          )}
+
+
+
+
+        </div>
+
+        <div className=" col-span-0 lg:col-span-2" ></div>
+      </div>
+
+    )}
+
+  </>);
 }
- 
+
 export default YoutubeEmbeded;
