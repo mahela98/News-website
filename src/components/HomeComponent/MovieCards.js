@@ -1,6 +1,7 @@
 import useFetchFunction from "../../fetch/useFetchFunction";
 import LoadingComponent from "../LoadingComponent/LoadingComponent";
 import MovieDetsilsPopup from "../MoviePageComponent/MovieDetailsPopup";
+
 const MovieCards = () => {
         var movies;
         const { data, isPending, error } = useFetchFunction(`https://api.themoviedb.org/3/movie/now_playing?api_key=${process.env.REACT_APP_THE_MOVIE_DB_API_KEY}&language=en-US&page=1`);
