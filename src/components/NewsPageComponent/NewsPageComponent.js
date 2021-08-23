@@ -14,7 +14,7 @@ const NewsPageComponent = () => {
         pageTitle = title;
         // console.log("no defalt");
     } catch (error) {
-        console.log("defalt");
+        // console.log("defalt");
     }
 
     const url = `https://newsapi.org/v2/top-headlines?language=en&apiKey=${process.env.REACT_APP_NEWS_API_KEY}&pageSize=25&page=1&category=${quary}`;

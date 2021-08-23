@@ -1,6 +1,6 @@
 const ByLinksComponent = ({ buy_links, saleInfo }) => {
-    console.log(buy_links)
-    console.log(saleInfo)
+    // console.log(buy_links)
+    // console.log(saleInfo)
 
     return (
         <>

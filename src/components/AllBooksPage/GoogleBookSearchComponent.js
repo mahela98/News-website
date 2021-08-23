@@ -2,7 +2,7 @@ import "./Bookspage.css";
 import BookDetailsModal from "./OneBookPopUpComponent";
 
 const GoogleBookSearchComponent = (props) => {
-  console.log(props.data);
+  // console.log(props.data);
   const data = props.data;
 
   if (data.items) {

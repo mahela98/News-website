@@ -17,21 +17,20 @@ function App() {
       <div className="App">
         <Navbar />
         <Switch>
-        <ScrollToTop>
-
-          <Route exact path="/" component={HomeComponent} />
-          <Route exact path="/books" component={BooksPage} />
-          <ProtectedRoute path="/profile" component={ProfilePage} />
-          <Route path="/booksearch">
-            <GoogleBookSearch />
-          </Route>
-          {/* <Route path="/test">
+          <ScrollToTop>
+            <Route exact path="/" component={HomeComponent} />
+            <Route exact path="/books" component={BooksPage} />
+            <ProtectedRoute path="/profile" component={ProfilePage} />
+            <Route path="/booksearch">
+              <GoogleBookSearch />
+            </Route>
+            {/* <Route path="/test">
             <LoadingComponent />
           </Route> */}
-          <Route path="/news" component={NewsPageComponent} />
-          <Route path="/movie" component={MovieMainPage} />
-          <Route path="/movieinfo" component={MovieFullInfo} />
-              </ScrollToTop>
+            <Route path="/news" component={NewsPageComponent} />
+            <Route path="/movie" component={MovieMainPage} />
+            <Route path="/movieinfo" component={MovieFullInfo} />
+          </ScrollToTop>
 
         </Switch>
         <Footer />

@@ -5,7 +5,7 @@ const NavbarUserProfilePictureComponent = () => {
     const { user ,isLoading} = useAuth0();
     const { picture } = user;
 
-    console.log(user);
+    // console.log(user);
     if (isLoading) {
         <>
         <img

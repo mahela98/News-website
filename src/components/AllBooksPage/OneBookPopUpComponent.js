@@ -27,16 +27,16 @@ export default function BookDetailsModal(props) {
     return (
       <div>
         {/* <button onClick={() => setOpen(true)}>kjahsd</button> */}
-        <div 
-        onClick={() => setOpen(true)}
-        className="my-mouse-pointer px-2 sm:px-4 text-left">
-                      <h3 className=" font-bold my-2 text-1xl sm:text-1xl">{title || volumeInfo.title} </h3>
-                      <p>
-                        <span className="font-bold">By  </span>
-                        {/* {author} */}
-                        {author || volumeInfo.authors || "Anonymous"}
-                      </p>
-                    </div>
+        <div
+          onClick={() => setOpen(true)}
+          className="my-mouse-pointer px-2 sm:px-4 text-left">
+          <h3 className=" font-bold my-2 text-1xl sm:text-1xl">{title || volumeInfo.title} </h3>
+          <p>
+            <span className="font-bold">By  </span>
+            {/* {author} */}
+            {author || volumeInfo.authors || "Anonymous"}
+          </p>
+        </div>
 
         <Transition.Root show={open} as={Fragment}>
           <Dialog
@@ -77,7 +77,6 @@ export default function BookDetailsModal(props) {
                 <div className="inline-block pt-0 align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all ">
                   <div className="bg-white px-0 pt-0 pb-0 sm:p-0 sm:pb-0">
                     <div className="sm:flex sm:items-start">
-                     
                       {/* <div className="mx-auto flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-full bg-red-100 sm:mx-0 sm:h-10 sm:w-10">
                     <ExclamationIcon className="h-6 w-6 text-red-600" aria-hidden="true" />
                   </div> */}
@@ -86,19 +85,14 @@ export default function BookDetailsModal(props) {
                       {title}
                     </Dialog.Title> */}
                         <div className="mt-0">
-
-                        <div
-                        className="my-outline book-details-body pb-0 px-5 pt-2 sm:pt-5 sm:px-10 flex flex-row-reverse"
-                        >
-                          <p onClick={() => setOpen(false)}
-                        ref={cancelButtonRef} 
-                        className="my-close-button px-2 focus:outline-none "
-                        >X</p>
-                        
-                        </div>
-
-
-
+                          <div
+                            className="my-outline book-details-body pb-0 px-5 pt-2 sm:pt-5 sm:px-10 flex flex-row-reverse"
+                          >
+                            <p onClick={() => setOpen(false)}
+                              ref={cancelButtonRef}
+                              className="my-close-button px-2 focus:outline-none "
+                            >X</p>
+                          </div>
                           <>
                             <section className="book-details-body body-font overflow-hidden">
                               <div className="container px-5 py-0 pt-5 sm:pt-5 mx-auto ">
@@ -107,7 +101,6 @@ export default function BookDetailsModal(props) {
                                   <div className="lg:w-1/2 w-full lg:pl-10  lg:py-6 mt-6 lg:mt-0">
                                     <h1 className="my-title-text text-3xl title-font font-medium mb-1">{title || volumeInfo.title}</h1>
                                     <h2 className="text-sm title-font text-white-500 tracking-widest text-lg">Author- {author || volumeInfo.authors || "Anonymous"}</h2>
-
                                     <div className="flex mb-4">
                                       <span className="flex items-center">
                                         <svg fill="currentColor" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-4 h-4 text-indigo-500" viewBox="0 0 24 24">
@@ -131,7 +124,6 @@ export default function BookDetailsModal(props) {
                                         <div>Last Week Rank <strong>{rank_last_week || "None"}</strong> </div>
                                       </span>
                                     </div>
-
                                     <div className="flex py-3 px-5 sm:px-0">
                                       {
                                         price && (<span className="title-font font-medium text-xl text-gray-200 my-title-text">Price : $ {price}</span>)
@@ -141,38 +133,17 @@ export default function BookDetailsModal(props) {
                                         )
                                       }
                                     </div>
-
                                     <p className="leading-relaxed">{description || volumeInfo.description}</p>
                                     <h2 className="text-sm title-font text-gray-300 tracking-widest pt-5 ">Published By {publisher || volumeInfo.publisher} Books.</h2>
-
-
-                                    
-                <div className="mt-5">
-                  <h4 className="mb-2 text-lgtitle-font font-medium mb-1">Buy Links</h4>
-                  <ByLinksComponent buy_links = {buy_links || null} saleInfo = {saleInfo || null} />
-                
-                </div>
-
+                                    <div className="mt-5">
+                                      <h4 className="mb-2 text-lgtitle-font font-medium mb-1">Buy Links</h4>
+                                      <ByLinksComponent buy_links={buy_links || null} saleInfo={saleInfo || null} />
+                                    </div>
                                   </div>
                                 </div>
                               </div>
                             </section>
-
-
-
-
-
-
-
-
-
                           </>
-
-
-
-
-
-
 
                         </div>
                       </div>
