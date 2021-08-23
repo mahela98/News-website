@@ -1,6 +1,6 @@
 import useFetchFunction from "../../fetch/useFetchFunction";
 import LoadingComponent from "../LoadingComponent/LoadingComponent";
-import BookDetailsModal from "../AllBooksPage/OneBoolPopUpComponent";
+import BookDetailsModal from "../AllBooksPage/OneBookPopUpComponent";
 
 const Bookcards = () => {
     var books;

@@ -9,7 +9,7 @@ import NewsPageComponent from "./components/NewsPageComponent/NewsPageComponent"
 import MovieMainPage from "./components/MoviePageComponent/MovieMainPage";
 import MovieFullInfo from "./components/MoviePageComponent/MovieFullInfoComponent";
 import ProtectedRoute from './auth/protected-route';
-import ScrollToTop from "./ScroleToTop";
+import ScrollToTop from "./ScroleToTop/ScroleToTop";
 
 function App() {
   return (

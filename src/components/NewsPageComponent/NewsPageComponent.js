@@ -48,7 +48,8 @@ const NewsPageComponent = () => {
                                             <div className="my-image h-48 lg:h-auto lg:w-1/3 flex-none bg-cover rounded-t
                      lg:rounded-t-none lg:rounded-l text-center overflow-hidden"
                                                 style={{
-                                                    backgroundImage: "url(" + `${urlToImage}` + ")",
+                                                    // backgroundImage: "url(" + `${urlToImage}` + ")",
+                                                    backgroundImage: `url("${urlToImage}")`,
                                                     backgroundPosition: 'center',
                                                     backgroundSize: 'cover',
                                                     backgroundRepeat: 'no-repeat'

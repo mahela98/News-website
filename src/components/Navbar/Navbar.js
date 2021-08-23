@@ -14,7 +14,7 @@ const navigation = [
     { name: 'News', href: '/news', current: false },
     { name: 'Books', href: '/books', current: false },
     { name: 'Movies', href: '/movie', current: false },
-    { name: 'About', href: '#', current: false },
+    { name: 'About', href: '/#', current: false },
 ]
 
 
@@ -139,7 +139,7 @@ export default function Example() {
                                                             {({ active }) => (
 
                                                                 <a
-                                                                    href="#"
+                                                                    href="/#"
                                                                     className={classNames(
                                                                         active ? 'bg-gray-100' : '',
                                                                         'block px-4 py-2 text-sm text-gray-700'

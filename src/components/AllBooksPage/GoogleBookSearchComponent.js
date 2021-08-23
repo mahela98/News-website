@@ -1,5 +1,5 @@
 import "./Bookspage.css";
-import BookDetailsModal from "./OneBoolPopUpComponent";
+import BookDetailsModal from "./OneBookPopUpComponent";
 
 const GoogleBookSearchComponent = (props) => {
   console.log(props.data);
