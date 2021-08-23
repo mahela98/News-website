@@ -9,6 +9,7 @@ import NewsPageComponent from "./components/NewsPageComponent/NewsPageComponent"
 import MovieMainPage from "./components/MoviePageComponent/MovieMainPage";
 import MovieFullInfo from "./components/MoviePageComponent/MovieFullInfoComponent";
 import ProtectedRoute from './auth/protected-route';
+import ScrollToTop from "./ScroleToTop";
 
 function App() {
   return (
@@ -16,6 +17,8 @@ function App() {
       <div className="App">
         <Navbar />
         <Switch>
+        <ScrollToTop>
+
           <Route exact path="/" component={HomeComponent} />
           <Route exact path="/books" component={BooksPage} />
           <ProtectedRoute path="/profile" component={ProfilePage} />
@@ -28,6 +31,8 @@ function App() {
           <Route path="/news" component={NewsPageComponent} />
           <Route path="/movie" component={MovieMainPage} />
           <Route path="/movieinfo" component={MovieFullInfo} />
+              </ScrollToTop>
+
         </Switch>
         <Footer />
       </div>
