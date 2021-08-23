@@ -6,7 +6,7 @@ const LoginButton = () => {
   const { loginWithRedirect } = useAuth0();
   return (
     <p
-      className="navHover"
+      className="navHover text-sm "
       onClick={() => loginWithRedirect()}
     >
       Log In
