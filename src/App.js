@@ -8,6 +8,7 @@ import HomeComponent from "./components/HomeComponent/HomeComponent";
 import NewsPageComponent from "./components/NewsPageComponent/NewsPageComponent";
 import MovieMainPage from "./components/MoviePageComponent/MovieMainPage";
 import MovieFullInfo from "./components/MoviePageComponent/MovieFullInfoComponent";
+import ProtectedRoute from './auth/protected-route';
 
 function App() {
   return (
@@ -15,30 +16,18 @@ function App() {
       <div className="App">
         <Navbar />
         <Switch>
-        <Route exact path="/">
-            <HomeComponent />
-          </Route>
-          <Route exact path="/books">
-            <BooksPage />
-          </Route>
-          <Route path="/profile">
-            <ProfilePage />
-          </Route>
+          <Route exact path="/" component={HomeComponent} />
+          <Route exact path="/books" component={BooksPage} />
+          <ProtectedRoute path="/profile" component={ProfilePage} />
           <Route path="/booksearch">
             <GoogleBookSearch />
           </Route>
           {/* <Route path="/test">
             <LoadingComponent />
           </Route> */}
-          <Route path="/news">
-            <NewsPageComponent />
-          </Route>
-          <Route path="/movie">
-            <MovieMainPage />
-          </Route>
-          <Route path="/movieinfo">
-            <MovieFullInfo />
-          </Route>
+          <Route path="/news" component={NewsPageComponent} />
+          <Route path="/movie" component={MovieMainPage} />
+          <Route path="/movieinfo" component={MovieFullInfo} />
         </Switch>
         <Footer />
       </div>
